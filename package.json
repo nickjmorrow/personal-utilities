@@ -1,5 +1,5 @@
 {
-  "name": "typescript-cli-starter",
+  "name": "utl",
   "private": true,
   "version": "1.0.0",
   "description": "A simple and zero-opinion typescript starter template for building cross-platform command line applications.",
@@ -31,6 +31,9 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "@types/node": "^14.11.10",
+    "commander": "^2.20.0",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.3.0"
   }
 }

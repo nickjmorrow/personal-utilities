@@ -4,6 +4,12 @@
     "outDir": "dist",
     "module": "commonjs",
     "target": "es6",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
+  },
+  "moduleNameMapper": {
+    "^~/(.*)$": "<rootDir>/src/$1"
   }
 }
