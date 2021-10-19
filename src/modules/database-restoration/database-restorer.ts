@@ -18,7 +18,7 @@ export class DatabaseRestorer {
 
     const fileName = getFileNameFromLabel(label);
 
-    const command = `psql ${databaseName} < ${fileName} --quiet`;
+    const command = `psql ${databaseName} < ${fileName} --quiet --port=5433`;
 
     exec(command, (err, stdout, stderr) => {
       if (err) {

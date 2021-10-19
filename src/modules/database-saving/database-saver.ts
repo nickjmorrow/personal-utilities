@@ -27,7 +27,7 @@ export class DatabaseSaver {
 
     const fileName = getFileNameFromLabel(label);
 
-    const command = `pg_dump ${databaseName} --clean --if-exists --file=${fileName}`;
+    const command = `pg_dump ${databaseName} --clean --if-exists --file=${fileName} --no-owner --port=5433`;
 
     exec(command, (err, stdout, stderr) => {
       if (err) {
