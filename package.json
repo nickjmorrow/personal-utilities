@@ -1,39 +1,47 @@
 {
-  "name": "utl",
-  "private": true,
-  "version": "1.0.0",
-  "description": "A simple and zero-opinion typescript starter template for building cross-platform command line applications.",
-  "author": "Khalid Zoabi <kzoabi@outlook.com>",
-  "keywords": [
-    "typescript",
-    "cli",
-    "starter"
-  ],
-  "license": "MIT",
-  "main": "./dist/index.js",
-  "bin": "./dist/cli.js",
-  "files": [
-    "dist/**/*",
-    "!dist/**/*.test.js"
-  ],
-  "scripts": {
-    "dev": "ts-node ./src/cli.ts",
-    "clean": "rimraf ./dist/ ./exec/",
-    "build": "npm run clean && tsc",
-    "test": "npm run build && ava --verbose",
-    "bundle": "npm run build && pkg . --out-dir ./exec/"
-  },
-  "devDependencies": {
-    "ava": "^2.2.0",
-    "pkg": "^4.4.0",
-    "rimraf": "^2.6.3",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
-  },
-  "dependencies": {
-    "@types/node": "^14.11.10",
-    "commander": "^2.20.0",
-    "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.3.0"
-  }
+    "name": "utl",
+    "private": true,
+    "version": "1.0.0",
+    "description": "A simple and zero-opinion typescript starter template for building cross-platform command line applications.",
+    "author": "Khalid Zoabi <kzoabi@outlook.com>",
+    "keywords": [
+        "typescript",
+        "cli",
+        "starter"
+    ],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "bin": "./dist/cli.js",
+    "files": [
+        "dist/**/*",
+        "!dist/**/*.test.js"
+    ],
+    "scripts": {
+        "dev": "ts-node ./src/cli.ts",
+        "clean": "rimraf ./dist/ ./exec/",
+        "build": "npm run clean && tsc",
+        "test": "npm run build && ava --verbose",
+        "bundle": "npm run build && pkg . --out-dir ./exec/"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "@typescript-eslint/eslint-plugin": "^5.1.0",
+        "@typescript-eslint/parser": "^5.1.0",
+        "ava": "^2.2.0",
+        "eslint": "^8.0.1",
+        "jest": "^27.3.1",
+        "pkg": "^4.4.0",
+        "rimraf": "^2.6.3",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.5.3"
+    },
+    "dependencies": {
+        "@types/node": "^14.11.10",
+        "commander": "^2.20.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.4.1",
+        "reflect-metadata": "^0.1.13",
+        "tsyringe": "^4.3.0"
+    }
 }
