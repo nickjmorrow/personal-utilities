@@ -10,9 +10,26 @@ import { Step } from './types/step.enum';
 
 @injectable()
 export class PathDocumentationService {
+    orderedSteps = ['SAMPLE_QUEUE', 'PATH_REVIEW_QUEUE'];
+
     generatePathDiagram() {
-        const pathNodes = pathNames.filter(this.isParsablePathName).map(this.convertToPathNode);
+        const pathNodes = pathNames
+            .filter(this.isParsablePathName)
+            .map(this.convertToPathNode)
+            .filter(this.isInOrderedSteps);
+        const uniqueSteps = Array.from(
+            new Set([...pathNodes.map((pn) => pn.previousStep), ...pathNodes.map((pn) => pn.nextStep)]),
+        );
+        const uniqueAssetTypes = Array.from(new Set([...pathNodes.map((pn) => pn.assetType)]));
+
         throw new NotImplementedException();
+    }
+
+    isInOrderedSteps(pathNode: PathNode): boolean {
+        return (
+            this.orderedSteps.includes(pathNode.nextStep) &&
+            (pathNode.previousStep ? this.orderedSteps.includes(pathNode.previousStep) : true)
+        );
     }
 
     isParsablePathName(pathName: string): boolean {
